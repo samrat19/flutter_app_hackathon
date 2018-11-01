@@ -1,107 +1,131 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_hackathon/nextpage.dart';
+import 'package:flutter_app_hackathon/dartintro.dart';
 
-void main() => runApp(new MyApp());
+void main () => runApp(Contentpage());
 
-class MyApp extends StatelessWidget {
+class Contentpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: new LoginPage(),
       debugShowCheckedModeBanner: false,
+      theme: new ThemeData(primarySwatch: Colors.blue),
+      home: ContentHome(),
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
+class ContentHome extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _ContentHomeState createState() => _ContentHomeState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController t1 = new TextEditingController();
-  final TextEditingController t2 = new TextEditingController();
+class _ContentHomeState extends State<ContentHome> {
 
-  void checking() {
+  void flutter() {
     setState(() {
-      String email = t1.text;
-      String password = t2.text;
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new NewPage()));
+    });
+  }
 
-      if (email == "abc@abc.com") {
-        if (password == "abcd") {
-          t1.clear();
-          t2.clear();
-          Navigator.of(context).push(new MaterialPageRoute(
-              builder: (BuildContext context) => new NewPage()));
-        } else {}
-      } else {}
+  void dart() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new DartIntro()));
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.white,
-      body: new Stack(fit: StackFit.expand, children: <Widget>[
-        new Theme(
-          data: new ThemeData(
-              brightness: Brightness.light,
-              inputDecorationTheme: new InputDecorationTheme(
-                // hintStyle: new TextStyle(color: Colors.blue, fontSize: 20.0),
-                labelStyle: new TextStyle(color: Colors.blue, fontSize: 25.0),
-              )),
-          isMaterialAppTheme: true,
-          child: new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Container(
-                padding: const EdgeInsets.all(40.0),
-                child: new Form(
-                  autovalidate: true,
-                  child: new Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      new TextFormField(
-                        decoration: new InputDecoration(
-                            labelText: "Enter Email",
-                            fillColor: Colors.red,
-                            hintText: "john@newman.com"),
-                        keyboardType: TextInputType.emailAddress,
-                        controller: t1,
-                      ),
-                      new TextFormField(
-                        decoration: new InputDecoration(
-                            labelText: "Enter Password",
-                            fillColor: Colors.red,
-                            hintText: "johnye1234"),
-                        obscureText: true,
-                        keyboardType: TextInputType.text,
-                        controller: t2,
-                      ),
-                      new Padding(
-                        padding: const EdgeInsets.only(top: 60.0),
-                      ),
-                      new MaterialButton(
-                        height: 50.0,
-                        minWidth: 150.0,
-                        color: Colors.red,
-                        splashColor: Colors.blue,
-                        textColor: Colors.white,
-                        child: new Text("Log In",
-                          style: TextStyle(
-                              color: Colors.white, fontSize: 25.0
-                          ),
-                        ),
-                        onPressed: checking,
-                      )
-                    ],
-                  ),
-                ),
-              )
-            ],
+      appBar: new AppBar(
+          title: new Text(
+        "Content Page",
+        style: TextStyle(color: Colors.white),
+      )),
+      body: ListView(
+        children: <Widget>[
+          new Divider(),
+          new MaterialButton(
+            onPressed: flutter,
+            height: 170.0,
+            minWidth: 250.0,
+            color: Colors.white,
+            splashColor: Colors.red,
+            child: new Stack(
+              children: <Widget>[
+                //new Image(image: null),
+                //GetImageView(),
+                new FlutterLogo(size: 150.0),
+              ],
+            ),
           ),
-        ),
-      ]),
+          new MaterialButton(
+            onPressed: flutter,
+            height: 100.0,
+            minWidth: 250.0,
+            color: Colors.white,
+            splashColor: Colors.red,
+            child: new Stack(
+              children: <Widget>[
+                //new Image(image: null),
+                //GetImageView(),
+                new Text(
+                  "Welcome to flutter",
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 30.0),
+                )
+              ],
+            ),
+          ),
+          new Divider(),
+          new MaterialButton(
+            onPressed: dart,
+            height: 170.0,
+            minWidth: 250.0,
+            color: Colors.white,
+            splashColor: Colors.red,
+            child: new Stack(
+              children: <Widget>[
+                GetImageView(),
+              ],
+            ),
+          ),
+          new MaterialButton(
+            onPressed: dart,
+            height: 100.0,
+            minWidth: 250.0,
+            color: Colors.white,
+            splashColor: Colors.red,
+            child: new Stack(
+              children: <Widget>[
+                //new Image(image: null),
+                //GetImageView(),
+                new Text(
+                  "Welcome to DART",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30.0),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class GetImageView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage = new AssetImage('images/dartlogo.png');
+    Image image = Image(image: assetImage);
+
+    return Container(
+      child: image,
     );
   }
 }

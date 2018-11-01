@@ -3,13 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_hackathon/benifits.dart';  //ui
 import 'package:flutter_app_hackathon/drawback.dart'; //development and tools
 import 'package:flutter_app_hackathon/fluttermoredetails.dart'; // more details
-import 'package:flutter_app_hackathon/device.dart'; // device sdk
+import 'package:flutter_app_hackathon/nextpage.dart'; // device sdk
 
-import 'package:flutter_app_hackathon/install.dart';
-import 'package:flutter_app_hackathon/editor.dart';
-import 'package:flutter_app_hackathon/test.dart';
-
-class NewPage extends StatelessWidget {
+class DeviceSDK extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -26,34 +22,12 @@ class AndroidHome extends StatefulWidget {
 }
 
 class _AndroidHomeState extends State<AndroidHome> {
-
-  void install() {
-    setState(() {
-      Navigator.of(context).push(new MaterialPageRoute(
-          builder: (BuildContext context) => new Install()));
-    });
-  }
-
-  void editor() {
-    setState(() {
-      Navigator.of(context).push(new MaterialPageRoute(
-          builder: (BuildContext context) => new Editor()));
-    });
-  }
-
-  void test() {
-    setState(() {
-      Navigator.of(context).push(new MaterialPageRoute(
-          builder: (BuildContext context) => new Test()));
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
           title: new Text(
-            "Getting Started",
+            "Use Device and SDK APIs",
             style: TextStyle(color: Colors.white),
           )),
       drawer: Drawer(
@@ -66,15 +40,24 @@ class _AndroidHomeState extends State<AndroidHome> {
               ),
               accountEmail: Text("flutter.io"),
             ),
-            ListTile(
-                title: Text(
-                    "Getting Started"
-                ),
-                leading: Icon(Icons.chevron_right)
-            ),
+            /* Widget 2 */
+            /* Widget 3 */
             ListTile(
               title: Text(
-                "Build UIs"
+                  "Get Started"
+              ),
+              leading: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.of(context).pop();
+                //  Navigator.of(context).pushNamed("/a");
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => new NewPage()));
+              },
+            ),
+            /* Widget 4 */
+            ListTile(
+              title: Text(
+                  "Build UIs"
               ),
               leading: Icon(Icons.chevron_right),
               onTap: () {
@@ -86,15 +69,9 @@ class _AndroidHomeState extends State<AndroidHome> {
             ),
             ListTile(
               title: Text(
-                "Use device and SDK APIs"
+                  "Use device and SDK APIs"
               ),
               leading: Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.of(context).pop();
-                //  Navigator.of(context).pushNamed("/a");
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) => new DeviceSDK()));
-              },
             ),
             ListTile(
               title: Text(
@@ -107,8 +84,7 @@ class _AndroidHomeState extends State<AndroidHome> {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (BuildContext context) => new Drawbacks()));
               },
-            ),
-            ListTile(
+            ),ListTile(
               title: Text(
                   "More Details"
               ),
@@ -128,31 +104,7 @@ class _AndroidHomeState extends State<AndroidHome> {
           children: <Widget>[
             new Divider(),
             new MaterialButton(
-              onPressed: install,
-              child: Row(
-                children: <Widget>[
-                  /* Widget 1 */
-                  Container(
-                    child: new FlutterLogo(size: 100.0),
-                    height: 100.0,
-                    width: 100.0,
-                  ),
-                  /* Widget 2 */
-                  Center(
-                    child: Text(
-                      "Install ",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20.0
-                      )
-                    ),
-                  )
-                ],
-              )
-            ),
-            new Divider(),
-            new MaterialButton(
-              onPressed: editor,
+                onPressed: null,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -164,7 +116,7 @@ class _AndroidHomeState extends State<AndroidHome> {
                     /* Widget 2 */
                     Center(
                       child: Text(
-                          "Configure Editor",
+                          "Using Packages",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20.0
@@ -176,7 +128,7 @@ class _AndroidHomeState extends State<AndroidHome> {
             ),
             new Divider(),
             new MaterialButton(
-              onPressed: test,
+                onPressed: null,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -188,7 +140,31 @@ class _AndroidHomeState extends State<AndroidHome> {
                     /* Widget 2 */
                     Center(
                       child: Text(
-                          "Test Drive",
+                          "Developing Packages",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20.0
+                          )
+                      ),
+                    )
+                  ],
+                )
+            ),
+            new Divider(),
+            new MaterialButton(
+                onPressed: null,
+                child: Row(
+                  children: <Widget>[
+                    /* Widget 1 */
+                    Container(
+                      child: new FlutterLogo(size: 100.0),
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                    /* Widget 2 */
+                    Center(
+                      child: Text(
+                          "Platform Specific Code",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20.0
@@ -204,7 +180,3 @@ class _AndroidHomeState extends State<AndroidHome> {
     );
   }
 }
-
-
-
-

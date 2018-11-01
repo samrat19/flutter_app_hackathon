@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_hackathon/howTouse.dart';
-import 'package:flutter_app_hackathon/benifits.dart';
-import 'package:flutter_app_hackathon/nextpage.dart';
+
+import 'package:flutter_app_hackathon/benifits.dart';  //ui
+import 'package:flutter_app_hackathon/nextpage.dart'; //intro
+import 'package:flutter_app_hackathon/fluttermoredetails.dart'; // more details
+import 'package:flutter_app_hackathon/device.dart'; // device sdk
 
 class Drawbacks extends StatelessWidget {
   @override
@@ -25,7 +27,7 @@ class _AndroidHomeState extends State<AndroidHome> {
     return new Scaffold(
       appBar: new AppBar(
           title: new Text(
-            "Firebase",
+            "Development and Tools",
             style: TextStyle(color: Colors.white),
           )),
       drawer: Drawer(
@@ -34,37 +36,28 @@ class _AndroidHomeState extends State<AndroidHome> {
             /* Widget 1 */
             UserAccountsDrawerHeader(
               accountName: Text(
-                  "Firebase"
+                  "Flutter"
               ),
-              accountEmail: Text("firebase@google.io"),
+              accountEmail: Text("flutter.io"),
             ),
+            /* Widget 2 */
+            /* Widget 3 */
             ListTile(
               title: Text(
-                  "Introduction"
-              ),
-              leading: Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.of(context).pop();
-                //  Navigator.of(context).pushNamed("/a");
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) => NewPage()));
-              },
-            ),
-            ListTile(
-              title: Text(
-                  "How to use"
+                  "Get Started"
               ),
               leading: Icon(Icons.chevron_right),
               onTap: () {
                 Navigator.of(context).pop();
                 //  Navigator.of(context).pushNamed("/a");
                 Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) => new Howtouse()));
+                    builder: (BuildContext context) => new NewPage()));
               },
             ),
+            /* Widget 4 */
             ListTile(
               title: Text(
-                  "Benifits"
+                  "Build UIs"
               ),
               leading: Icon(Icons.chevron_right),
               onTap: () {
@@ -72,6 +65,36 @@ class _AndroidHomeState extends State<AndroidHome> {
                 //  Navigator.of(context).pushNamed("/a");
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (BuildContext context) => new Benifits()));
+              },
+            ),
+            ListTile(
+                title: Text(
+                    "Development and Tools"
+                ),
+                leading: Icon(Icons.chevron_right)
+            ),
+            ListTile(
+              title: Text(
+                  "Use device and SDK APIs"
+              ),
+              leading: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.of(context).pop();
+                //  Navigator.of(context).pushNamed("/a");
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => new DeviceSDK()));
+              },
+            ),
+            ListTile(
+              title: Text(
+                  "More Details"
+              ),
+              leading: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.of(context).pop();
+                //  Navigator.of(context).pushNamed("/a");
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => new Fluttermore()));
               },
             )
           ],
@@ -81,26 +104,77 @@ class _AndroidHomeState extends State<AndroidHome> {
         child: new ListView(
           children: <Widget>[
             new Divider(),
-            new Material(
-              child: Container(
-                height: 60.0,
-                child: Text("Drawbacks : ",
-                  style: new TextStyle(
-                      fontSize: 40.0,
-                      color: Colors.redAccent),),
-              ),
+            new MaterialButton(
+                onPressed: null,
+                child: Row(
+                  children: <Widget>[
+                    /* Widget 1 */
+                    Container(
+                      child: new FlutterLogo(size: 100.0),
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                    /* Widget 2 */
+                    Center(
+                      child: Text(
+                          "Using Flutter iDEs ",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20.0
+                          )
+                      ),
+                    )
+                  ],
+                )
             ),
-            new Material(
-              child: Container(
-                height: 500.0,
-                child: Text("1. Unless your app runs of one centralized database updated by a vast quantity of users, it’s a major overkill.\n2. Storage format is entirely different to that of SQL, (Firebase uses JSON) so you wouldn’t be able to migrate that easily.\n3. Reporting tools won’t be anywhere near the ones of standard SQL.\n4. Costs! -Limited to 50 Connections and 100mb of Storage!\n5. You don’t host the data, Firebase does. And depending on which server you get put on, viewing there up time there seems to be a lot of disruption lately.",
-                  style:
-                  new TextStyle(
-                      fontSize: 25.0,
-                      color: Colors.black54
-                  ),
-                ),
-              ),),
+            new Divider(),
+            new MaterialButton(
+                onPressed: null,
+                child: Row(
+                  children: <Widget>[
+                    /* Widget 1 */
+                    Container(
+                      child: new FlutterLogo(size: 100.0),
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                    /* Widget 2 */
+                    Center(
+                      child: Text(
+                          "Using Hot Reload",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20.0
+                          )
+                      ),
+                    )
+                  ],
+                )
+            ),
+            new Divider(),
+            new MaterialButton(
+                onPressed: null,
+                child: Row(
+                  children: <Widget>[
+                    /* Widget 1 */
+                    Container(
+                      child: new FlutterLogo(size: 100.0),
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                    /* Widget 2 */
+                    Center(
+                      child: Text(
+                          "Performance Profiling",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20.0
+                          )
+                      ),
+                    )
+                  ],
+                )
+            ),
           ],
         ),
       ),

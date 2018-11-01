@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_hackathon/dartcontent.dart';
 
-import 'package:flutter_app_hackathon/benifits.dart';
-import 'package:flutter_app_hackathon/drawback.dart';
-import 'package:flutter_app_hackathon/nextpage.dart';
-
-class Howtouse extends StatelessWidget {
-
+class DartIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -27,7 +23,7 @@ class _AndroidHomeState extends State<AndroidHome> {
     return new Scaffold(
       appBar: new AppBar(
           title: new Text(
-            "Firebase",
+            "Dart Intro",
             style: TextStyle(color: Colors.white),
           )),
       drawer: Drawer(
@@ -36,47 +32,31 @@ class _AndroidHomeState extends State<AndroidHome> {
             /* Widget 1 */
             UserAccountsDrawerHeader(
               accountName: Text(
-                  "Firebase"
+                  "Dart"
               ),
-              accountEmail: Text("firebase@google.io"),
+              accountEmail: Text("dartlang.org"),
             ),
             /* Widget 2 */
             /* Widget 3 */
             ListTile(
               title: Text(
-                  "introduction"
+                  "Introduction"
               ),
               leading: Icon(Icons.chevron_right),
-              onTap: () {
-                //   Navigator.of(context).pop();
-                  Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (BuildContext context) => new NewPage()));
-              },
             ),
+            /* Widget 4 */
             ListTile(
               title: Text(
-                  "Benifits"
+                  "Content"
               ),
               leading: Icon(Icons.chevron_right),
               onTap: () {
                 Navigator.of(context).pop();
                 //  Navigator.of(context).pushNamed("/a");
                 Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) => new Benifits()));
+                    builder: (BuildContext context) => new DartContent()));
               },
             ),
-            ListTile(
-              title: Text(
-                  "Drawbacks"
-              ),
-              leading: Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.of(context).pop();
-                //  Navigator.of(context).pushNamed("/a");
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) => new Drawbacks()));
-              },
-            )
           ],
         ),
       ),
@@ -87,16 +67,16 @@ class _AndroidHomeState extends State<AndroidHome> {
             new Material(
               child: Container(
                 height: 60.0,
-                child: Text("How to use : ",
+                child: Text("Let's Start4 : ",
                   style: new TextStyle(
-                      fontSize: 40.0,
+                      fontSize: 30.0,
                       color: Colors.redAccent),),
               ),
             ),
             new Material(
               child: Container(
                 height: 500.0,
-                child: Text("Configure Firebase Database Rules \nThe Realtime Database provides a declarative rules language that allows you to define how your data should be structured, how it should be indexed, and when your data can be read from and written to. By default, read and write access to your database is restricted so only authenticated users can read or write data. To get started without setting up Authentication, you can configure your rules for public access. This does make your database open to anyone, even people not using your app, so be sure to restrict your database again when you set up authentication.",
+                child: Text("1. Unless your app runs of one centralized database updated by a vast quantity of users, it’s a major overkill.\n2. Storage format is entirely different to that of SQL, (Firebase uses JSON) so you wouldn’t be able to migrate that easily.\n3. Reporting tools won’t be anywhere near the ones of standard SQL.\n4. Costs! -Limited to 50 Connections and 100mb of Storage!\n5. You don’t host the data, Firebase does. And depending on which server you get put on, viewing there up time there seems to be a lot of disruption lately.",
                   style:
                   new TextStyle(
                       fontSize: 25.0,
