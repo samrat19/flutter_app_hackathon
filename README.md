@@ -19,6 +19,10 @@ put something as an amination . may be hero animation or tohers. need to place i
 
 # status : Done
 
+# plan 3 :
+
+my plan was to switch account through the naviagation drawyer and it is done
+
 ## Getting Started
 
 For help getting started with Flutter, view our online
