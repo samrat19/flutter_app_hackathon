@@ -8,7 +8,8 @@ after the login page , there may be a page where we have two logos and two mater
                                                 text (intro to flutter)   
                                                      
                                                       logo (dart)
-                                                text (let's introduce to dart first) 
+                                                text (let's introduce to dart first)
+# status : Done 
                                                 
 * it will be better if we can use two matrial buttons and both have a child where we put the logos and texts
 
@@ -16,6 +17,7 @@ after the login page , there may be a page where we have two logos and two mater
 
 put something as an amination . may be hero animation or tohers. need to place in the content pages. where willl be the contents of flutterand dart course. 
 
+# status : Done
 
 ## Getting Started
 
