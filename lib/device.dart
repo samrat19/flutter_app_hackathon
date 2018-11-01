@@ -5,6 +5,8 @@ import 'package:flutter_app_hackathon/drawback.dart'; //development and tools
 import 'package:flutter_app_hackathon/fluttermoredetails.dart'; // more details
 import 'package:flutter_app_hackathon/nextpage.dart'; // device sdk
 
+import 'package:flutter_app_hackathon/dartintro.dart';
+
 class DeviceSDK extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,14 @@ class AndroidHome extends StatefulWidget {
 }
 
 class _AndroidHomeState extends State<AndroidHome> {
+
+  void dartentry() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new DartIntro()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -34,11 +44,31 @@ class _AndroidHomeState extends State<AndroidHome> {
         child: ListView(
           children: <Widget>[
             /* Widget 1 */
-            UserAccountsDrawerHeader(
-              accountName: Text(
-                  "Flutter"
+            new UserAccountsDrawerHeader(
+              accountName: new Text(
+                "flutter",
+                style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
-              accountEmail: Text("flutter.io"),
+              accountEmail: new Text(
+                "flutter.io",
+                style: TextStyle(color: Colors.white, fontSize: 20.0),
+              ),
+              currentAccountPicture: new CircleAvatar(
+                child: new FlutterLogo(
+                  size: 50.0,
+                ),
+              ),
+              otherAccountsPictures: <Widget>[
+                MaterialButton(
+                  onPressed: dartentry,
+                  child: new CircleAvatar(
+                    child: new Text(
+                      "D",
+                      style: new TextStyle(fontSize: 40.0),
+                    ),
+                  ),
+                ),
+              ],
             ),
             /* Widget 2 */
             /* Widget 3 */

@@ -3,6 +3,8 @@ import 'package:flutter_app_hackathon/dartintro.dart';
 import 'package:flutter_app_hackathon/dart_Function.dart';
 import 'package:flutter_app_hackathon/dartclass.dart';
 
+import 'package:flutter_app_hackathon/nextpage.dart';
+
 class DartContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,13 @@ class AndroidHome extends StatefulWidget {
 }
 
 class _AndroidHomeState extends State<AndroidHome> {
+
+  void flutterentry1() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new NewPage()));
+    });
+  }
 
   void dartfunctions() {
     setState(() {
@@ -47,11 +56,27 @@ class _AndroidHomeState extends State<AndroidHome> {
         child: ListView(
           children: <Widget>[
             /* Widget 1 */
-            UserAccountsDrawerHeader(
-              accountName: Text(
-                  "Dart"
+            new UserAccountsDrawerHeader(
+              accountName: new Text(
+                "dart",
+                style: TextStyle(color: Colors.white, fontSize: 20.0),
               ),
-              accountEmail: Text("dartlang.org"),
+              accountEmail: new Text(
+                "dartlang.org",
+                style: TextStyle(color: Colors.white, fontSize: 20.0),
+              ),
+              currentAccountPicture: new CircleAvatar(child: GetImageView()),
+              otherAccountsPictures: <Widget>[
+                MaterialButton(
+                  onPressed: flutterentry1,
+                  child: new CircleAvatar(
+                    child: new Text(
+                      "F",
+                      style: new TextStyle(fontSize: 40.0),
+                    ),
+                  ),
+                ),
+              ],
             ),
             /* Widget 2 */
             /* Widget 3 */
