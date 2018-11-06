@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app_hackathon/nextpage.dart';
+import 'package:flutter_app_hackathon/dartcontent.dart';
 
-class Editor extends StatelessWidget {
-  static String tag = 'Flutter Installation';
+class Loops extends StatelessWidget {
+  static String tag = 'Dart Class';
 
   @override
   Widget build(BuildContext context) {
@@ -14,26 +14,21 @@ class Editor extends StatelessWidget {
         child: CircleAvatar(
           radius: 72.0,
           backgroundColor: Colors.transparent,
-          backgroundImage: AssetImage('images/flutter.png'),
+          backgroundImage: AssetImage('images/dartlogo.png'),
         ),
       ),
     );
 
     final welcome = Padding(
       padding: EdgeInsets.all(8.0),
+      child: Text(
+        'Welcome Alucard',
+        style: TextStyle(fontSize: 28.0, color: Colors.white),
+      ),
     );
 
     final lorem = Padding(
       padding: EdgeInsets.all(8.0),
-      child: Text(
-        '1. Start Android Studio.'
-        '2. Open plugin preferences'
-             '(Preferences>Plugins on macOS'
-             ' File>Settings>Plugins on Windows & Linux).'
-        '3. Select Browse repositories…, select the Flutter plug-in and click install.'
-        '4. Click Yes when prompted to install the Dart plugin and restart when prompted.',
-        style: TextStyle(fontSize: 16.0, color: Colors.white),
-      ),
     );
 
     final body = Container(
@@ -58,10 +53,10 @@ class Editor extends StatelessWidget {
             Navigator.of(context).pop();
             //  Navigator.of(context).pushNamed("/a");
             Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new NewPage()));
+                builder: (BuildContext context) => new DartContent()));
           },
         ),
-        title: Text("Configure Editor"),
+        title: Text("Dart Loop Control"),
       ),
       body: body,
     );

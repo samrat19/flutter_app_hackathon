@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_app_hackathon/benifits.dart';
+
 class Cookbook extends StatelessWidget {
   static String tag = 'Flutter Installation';
 
@@ -48,6 +50,17 @@ class Cookbook extends StatelessWidget {
     );
 
     return Scaffold(
+      appBar: new AppBar(
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: (){
+            Navigator.of(context).pop();
+            //  Navigator.of(context).pushNamed("/a");
+            Navigator.of(context).push(new MaterialPageRoute(
+                builder: (BuildContext context) => new Benifits()));
+          },
+        ),
+      ),
       body: body,
     );
   }

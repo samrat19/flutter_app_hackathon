@@ -90,8 +90,8 @@ class _AndroidHomeState extends State<AndroidHome> {
               child: Container(
                 height: 60.0,
                 child: Text(
-                  "Let's Start4 : ",
-                  style: new TextStyle(fontSize: 30.0, color: Colors.redAccent),
+                  "Get Started : ",
+                  style: new TextStyle(fontSize: 30.0, color: Colors.blue),
                 ),
               ),
             ),
@@ -99,8 +99,8 @@ class _AndroidHomeState extends State<AndroidHome> {
               child: Container(
                 height: 500.0,
                 child: Text(
-                  "1. Unless your app runs of one centralized database updated by a vast quantity of users, it’s a major overkill.\n2. Storage format is entirely different to that of SQL, (Firebase uses JSON) so you wouldn’t be able to migrate that easily.\n3. Reporting tools won’t be anywhere near the ones of standard SQL.\n4. Costs! -Limited to 50 Connections and 100mb of Storage!\n5. You don’t host the data, Firebase does. And depending on which server you get put on, viewing there up time there seems to be a lot of disruption lately.",
-                  style: new TextStyle(fontSize: 25.0, color: Colors.black54),
+                  "Dart is an open-source general-purpose programming language. It is originally developed by Google and later approved as a standard by ECMA. Dart is a new programming language meant for the server as well as the browser. Introduced by Google, the Dart SDK ships with its compiler – the Dart VM. The SDK also includes a utility -dart2js, a transpiler that generates JavaScript equivalent of a Dart Script. This tutorial provides a basic level understanding of the Dart programming language.",
+                  style: new TextStyle(fontSize: 25.0, color: Colors.black),
                 ),
               ),
             ),

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_hackathon/nextpage.dart';
 import 'package:flutter_app_hackathon/dartintro.dart';
 
-void main () => runApp(Contentpage());
+import 'package:flutter_app_hackathon/about.dart';
+import 'package:flutter_app_hackathon/whowe.dart';
+
+void main() => runApp(Contentpage());
 
 class Contentpage extends StatelessWidget {
   @override
@@ -21,7 +24,6 @@ class ContentHome extends StatefulWidget {
 }
 
 class _ContentHomeState extends State<ContentHome> {
-
   void flutter() {
     setState(() {
       Navigator.of(context).push(new MaterialPageRoute(
@@ -39,11 +41,16 @@ class _ContentHomeState extends State<ContentHome> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-          title: new Text(
-        "Content Page",
-        style: TextStyle(color: Colors.white),
-      )),
+      appBar: new AppBar(title: new Text("Content Page"), actions: <Widget>[
+        IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+            Navigator.of(context).push(new MaterialPageRoute(
+                builder: (BuildContext context) => new WHOwe()));
+          },
+          icon: Icon(Icons.accessibility),
+        ),
+      ]),
       body: ListView(
         children: <Widget>[
           new Divider(),
@@ -73,9 +80,7 @@ class _ContentHomeState extends State<ContentHome> {
                 //GetImageView(),
                 new Text(
                   "Welcome to flutter",
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 30.0),
+                  style: TextStyle(color: Colors.blue, fontSize: 30.0),
                 )
               ],
             ),
@@ -101,14 +106,10 @@ class _ContentHomeState extends State<ContentHome> {
             splashColor: Colors.red,
             child: new Stack(
               children: <Widget>[
-                //new Image(image: null),
-                //GetImageView(),
                 new Text(
-                  "Welcome to DART",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0),
-                )
+                  "Let's Introduced with DART",
+                  style: TextStyle(color: Colors.black, fontSize: 25.0),
+                ),
               ],
             ),
           )

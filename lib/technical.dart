@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app_hackathon/nextpage.dart';
+import 'package:flutter_app_hackathon/fluttermoredetails.dart';
 
-class Editor extends StatelessWidget {
+class Technical extends StatelessWidget {
   static String tag = 'Flutter Installation';
 
   @override
@@ -26,12 +26,7 @@ class Editor extends StatelessWidget {
     final lorem = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        '1. Start Android Studio.'
-        '2. Open plugin preferences'
-             '(Preferences>Plugins on macOS'
-             ' File>Settings>Plugins on Windows & Linux).'
-        '3. Select Browse repositories…, select the Flutter plug-in and click install.'
-        '4. Click Yes when prompted to install the Dart plugin and restart when prompted.',
+        'Flutter is a mobile app SDK for building high-performance, high-fidelity, apps for iOS and Android, from a single codebase.The goal is to enable developers to deliver high-performance apps that feel natural on different platforms.',
         style: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
     );
@@ -58,10 +53,10 @@ class Editor extends StatelessWidget {
             Navigator.of(context).pop();
             //  Navigator.of(context).pushNamed("/a");
             Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new NewPage()));
+                builder: (BuildContext context) => new Fluttermore()));
           },
         ),
-        title: Text("Configure Editor"),
+        title: Text("Technical Overview"),
       ),
       body: body,
     );

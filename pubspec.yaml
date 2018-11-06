@@ -38,11 +38,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - images/firebase.png
    - images/dartlogo.png
    - images/flutter.png
+   - images/atri.png
+   - images/shoili.png
+   - images/ritam.png
+   - images/shirsha.png
   #  - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 

@@ -7,6 +7,10 @@ import 'package:flutter_app_hackathon/device.dart'; // device sdk
 
 import 'package:flutter_app_hackathon/dartintro.dart';
 
+import 'package:flutter_app_hackathon/ide.dart';
+import 'package:flutter_app_hackathon/hot.dart';
+import 'package:flutter_app_hackathon/performance.dart';
+
 class Drawbacks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -31,6 +35,30 @@ class _AndroidHomeState extends State<AndroidHome> {
           builder: (BuildContext context) => new DartIntro()));
     });
   }
+
+  void ideentry() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new IDE()));
+    });
+  }
+
+  void hotentry() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Hot()));
+    });
+  }
+
+  void performanceentry() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Performance()));
+    });
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +163,7 @@ class _AndroidHomeState extends State<AndroidHome> {
           children: <Widget>[
             new Divider(),
             new MaterialButton(
-                onPressed: null,
+                onPressed: ideentry,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -159,7 +187,7 @@ class _AndroidHomeState extends State<AndroidHome> {
             ),
             new Divider(),
             new MaterialButton(
-                onPressed: null,
+                onPressed: hotentry,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -183,7 +211,7 @@ class _AndroidHomeState extends State<AndroidHome> {
             ),
             new Divider(),
             new MaterialButton(
-                onPressed: null,
+                onPressed: performanceentry,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */

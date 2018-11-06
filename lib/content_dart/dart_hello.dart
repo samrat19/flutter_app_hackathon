@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app_hackathon/nextpage.dart';
+import 'package:flutter_app_hackathon/dartcontent.dart';
 
-class Editor extends StatelessWidget {
-  static String tag = 'Flutter Installation';
+class HelloWorld extends StatelessWidget {
+  static String tag = 'Dart Class';
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Editor extends StatelessWidget {
         child: CircleAvatar(
           radius: 72.0,
           backgroundColor: Colors.transparent,
-          backgroundImage: AssetImage('images/flutter.png'),
+          backgroundImage: AssetImage('images/dartlogo.png'),
         ),
       ),
     );
@@ -26,12 +26,7 @@ class Editor extends StatelessWidget {
     final lorem = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        '1. Start Android Studio.'
-        '2. Open plugin preferences'
-             '(Preferences>Plugins on macOS'
-             ' File>Settings>Plugins on Windows & Linux).'
-        '3. Select Browse repositories…, select the Flutter plug-in and click install.'
-        '4. Click Yes when prompted to install the Dart plugin and restart when prompted.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit condimentum mauris id tempor. Praesent eu commodo lacus. Praesent eget mi sed libero eleifend tempor. Sed at fringilla ipsum. Duis malesuada feugiat urna vitae convallis. Aliquam eu libero arcu.',
         style: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
     );
@@ -54,14 +49,17 @@ class Editor extends StatelessWidget {
       appBar: new AppBar(
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: (){
+          onPressed: () {
             Navigator.of(context).pop();
             //  Navigator.of(context).pushNamed("/a");
             Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new NewPage()));
+                builder: (BuildContext context) => new DartContent()));
           },
         ),
-        title: Text("Configure Editor"),
+        title: Text(
+          "Hello World",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: body,
     );

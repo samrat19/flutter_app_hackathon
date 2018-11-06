@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app_hackathon/nextpage.dart';
+import 'package:flutter_app_hackathon/drawback.dart';
 
-class Editor extends StatelessWidget {
+class Hot extends StatelessWidget {
   static String tag = 'Flutter Installation';
 
   @override
@@ -26,12 +26,7 @@ class Editor extends StatelessWidget {
     final lorem = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        '1. Start Android Studio.'
-        '2. Open plugin preferences'
-             '(Preferences>Plugins on macOS'
-             ' File>Settings>Plugins on Windows & Linux).'
-        '3. Select Browse repositories…, select the Flutter plug-in and click install.'
-        '4. Click Yes when prompted to install the Dart plugin and restart when prompted.',
+        'Flutter’s hot reload feature helps you quickly and easily experiment, build UIs, add features, and fix bugs. Hot reload works by injecting updated source code files into the running Dart Virtual Machine (VM). After the VM updates classes with the new versions of fields and functions, the Flutter framework automatically rebuilds the widget tree, allowing you to quickly view the effects of your changes.',
         style: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
     );
@@ -58,10 +53,10 @@ class Editor extends StatelessWidget {
             Navigator.of(context).pop();
             //  Navigator.of(context).pushNamed("/a");
             Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new NewPage()));
+                builder: (BuildContext context) => new Drawbacks()));
           },
         ),
-        title: Text("Configure Editor"),
+        title: Text("Using Hot Reload"),
       ),
       body: body,
     );

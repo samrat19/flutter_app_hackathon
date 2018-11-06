@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_hackathon/dartintro.dart';
-import 'package:flutter_app_hackathon/dart_Function.dart';
-import 'package:flutter_app_hackathon/dartclass.dart';
+
+import 'package:flutter_app_hackathon/content_dart/dart_hello.dart';
+import 'package:flutter_app_hackathon/content_dart/dart_datatypes.dart';
+import 'package:flutter_app_hackathon/content_dart/dart_decision.dart';
+import 'package:flutter_app_hackathon/content_dart/dart_loops.dart';
+import 'package:flutter_app_hackathon/content_dart/dart_variables.dart';
 
 import 'package:flutter_app_hackathon/nextpage.dart';
 
@@ -30,17 +34,38 @@ class _AndroidHomeState extends State<AndroidHome> {
     });
   }
 
-  void dartfunctions() {
+  void darthello(){
     setState(() {
       Navigator.of(context).push(new MaterialPageRoute(
-          builder: (BuildContext context) => new HomePage()));
+          builder: (BuildContext context) => new HelloWorld()));
     });
   }
 
-  void dartclass(){
+  void dartdatatypes() {
     setState(() {
       Navigator.of(context).push(new MaterialPageRoute(
-          builder: (BuildContext context) => new ClassPage()));
+          builder: (BuildContext context) => new DataTypes()));
+    });
+  }
+
+  void dartdecision() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Decision()));
+    });
+  }
+
+  void dartloops() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Loops()));
+    });
+  }
+
+  void dartvariables() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Variable()));
     });
   }
 
@@ -108,7 +133,7 @@ class _AndroidHomeState extends State<AndroidHome> {
           children: <Widget>[
             new Divider(),
             new MaterialButton(
-              onPressed: dartfunctions,
+              onPressed: darthello,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -120,7 +145,7 @@ class _AndroidHomeState extends State<AndroidHome> {
                     /* Widget 2 */
                     Center(
                       child: Text(
-                          "Dart Functions",
+                          "Dart Hello world",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20.0
@@ -132,7 +157,7 @@ class _AndroidHomeState extends State<AndroidHome> {
             ),
             new Divider(),
             new MaterialButton(
-              onPressed: dartclass,
+              onPressed: dartdatatypes,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -144,7 +169,79 @@ class _AndroidHomeState extends State<AndroidHome> {
                     /* Widget 2 */
                     Center(
                       child: Text(
-                          "Dart Class and Object",
+                          "Dart Data Types",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20.0
+                          )
+                      ),
+                    )
+                  ],
+                )
+            ),
+            new Divider(),
+            new MaterialButton(
+                onPressed: dartvariables,
+                child: Row(
+                  children: <Widget>[
+                    /* Widget 1 */
+                    Container(
+                      child: GetImageView(),
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                    /* Widget 2 */
+                    Center(
+                      child: Text(
+                          "Dart Variables",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20.0
+                          )
+                      ),
+                    )
+                  ],
+                )
+            ),
+            new Divider(),
+            new MaterialButton(
+                onPressed: dartdecision,
+                child: Row(
+                  children: <Widget>[
+                    /* Widget 1 */
+                    Container(
+                      child: GetImageView(),
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                    /* Widget 2 */
+                    Center(
+                      child: Text(
+                          "Dart Decision Making",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20.0
+                          )
+                      ),
+                    )
+                  ],
+                )
+            ),
+            new Divider(),
+            new MaterialButton(
+                onPressed: dartloops,
+                child: Row(
+                  children: <Widget>[
+                    /* Widget 1 */
+                    Container(
+                      child: GetImageView(),
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                    /* Widget 2 */
+                    Center(
+                      child: Text(
+                          "Dart loops",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20.0

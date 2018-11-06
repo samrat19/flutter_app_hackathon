@@ -7,6 +7,10 @@ import 'package:flutter_app_hackathon/device.dart'; // device sdk
 
 import 'package:flutter_app_hackathon/dartintro.dart';
 
+import 'package:flutter_app_hackathon/technical.dart';
+import 'package:flutter_app_hackathon/magic.dart';
+import 'package:flutter_app_hackathon/architecture.dart';
+
 class Fluttermore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,6 +33,27 @@ class _AndroidHomeState extends State<AndroidHome> {
     setState(() {
       Navigator.of(context).push(new MaterialPageRoute(
           builder: (BuildContext context) => new DartIntro()));
+    });
+  }
+
+  void technicalentry() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Technical()));
+    });
+  }
+
+  void magicentry() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Magic()));
+    });
+  }
+
+  void architectureentry() {
+    setState(() {
+      Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => new Architecture()));
     });
   }
 
@@ -134,7 +159,7 @@ class _AndroidHomeState extends State<AndroidHome> {
           children: <Widget>[
             new Divider(),
             new MaterialButton(
-                onPressed: null,
+                onPressed: technicalentry,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -158,7 +183,7 @@ class _AndroidHomeState extends State<AndroidHome> {
             ),
             new Divider(),
             new MaterialButton(
-                onPressed: null,
+                onPressed: magicentry,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
@@ -182,7 +207,7 @@ class _AndroidHomeState extends State<AndroidHome> {
             ),
             new Divider(),
             new MaterialButton(
-                onPressed: null,
+                onPressed: architectureentry,
                 child: Row(
                   children: <Widget>[
                     /* Widget 1 */
