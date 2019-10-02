@@ -84,18 +84,20 @@ class _AndroidHomeState extends State<AndroidHome> {
         child: new ListView(
           children: <Widget>[
             new Divider(),
-            new Material(
-              child: Container(
-                height: 60.0,
-                child: Text("How to use : ",
-                  style: new TextStyle(
-                      fontSize: 40.0,
-                      color: Colors.redAccent),),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: new Material(
+                child: Container(
+                  height: 60.0,
+                  child: Text("How to use : ",
+                    style: new TextStyle(
+                        fontSize: 40.0,
+                        color: Colors.redAccent),),
+                ),
               ),
             ),
             new Material(
               child: Container(
-                height: 500.0,
                 child: Text("Configure Firebase Database Rules \nThe Realtime Database provides a declarative rules language that allows you to define how your data should be structured, how it should be indexed, and when your data can be read from and written to. By default, read and write access to your database is restricted so only authenticated users can read or write data. To get started without setting up Authentication, you can configure your rules for public access. This does make your database open to anyone, even people not using your app, so be sure to restrict your database again when you set up authentication.",
                   style:
                   new TextStyle(
